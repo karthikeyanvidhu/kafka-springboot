@@ -22,4 +22,9 @@ public class KafkaController {
     public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
         this.producer.sendMessage(message);
     }
+    
+    @PostMapping(value = "/mqTopicTest")
+    public void sendMessageToMqKafkaTopic(@RequestParam("message") String message) {
+        this.producer.sendMessagetoMq(message);
+    }
 }

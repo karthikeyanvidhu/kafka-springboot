@@ -16,4 +16,9 @@ public class Consumer {
     public void consume(String message) throws IOException {
         logger.info(String.format("#### -> Consumed message -> %s", message));
     }
+    
+    @KafkaListener(topics = "mq-kafka-topic", groupId = "group_id")
+    public void consumed(String message) throws IOException {
+        logger.info(String.format("#### -> mq-kafka-topic Consumed message -> %s", message));
+    }
 }
